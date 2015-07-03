@@ -26,6 +26,7 @@ class Extension extends Twig_Extension
          'String' => $this->Injector->make("Aurora\\Helper\\String"),
          'Text' => $this->Injector->make("Aurora\\Helper\\Text"),
          'Url' => $this->Injector->make("Aurora\\Helper\\Url"),
+         'Form' => $this->Injector->make("Aurora\\Helper\\Form"),
       ];
    }
 
