@@ -3,12 +3,13 @@
 namespace Aurora\Twig;
 
 use Twig_Extension;
+use Aurora\Injector;
 
 class Extension extends Twig_Extension
 {
    private $Injector;
 
-   public function __construct(ResolverInterface $Injector)
+   public function __construct(Injector $Injector)
    {
       $this->Injector = $Injector;
    }
