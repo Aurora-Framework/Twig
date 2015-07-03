@@ -2,6 +2,8 @@
 
 namespace Aurora\Twig;
 
+use Twig_Extension;
+
 class Extension extends Twig_Extension
 {
    private $Injector;
