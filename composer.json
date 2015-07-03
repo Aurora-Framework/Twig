@@ -1,6 +1,6 @@
 {
    "name": "aurora-framework/twig",
-   "description": "Session",
+   "description": "Twig Extension for Aurora",
    "license": "MIT",
    "authors": [
       {
