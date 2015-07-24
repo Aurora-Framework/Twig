@@ -30,4 +30,8 @@ class Extension extends Twig_Extension
       ];
    }
 
+   public function getInjector()
+   {
+      return $this->Injector;
+   }
 }
