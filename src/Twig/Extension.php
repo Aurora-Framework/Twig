@@ -3,35 +3,35 @@
 namespace Aurora\Twig;
 
 use Twig_Extension;
-use Aurora\Injector;
+use Aurora\DI\ResolverInterface;
 
 class Extension extends Twig_Extension
 {
-   private $Injector;
+    private $Resolver;
 
-   public function __construct(Injector $Injector)
-   {
-      $this->Injector = $Injector;
-   }
+    public function __construct(ResolverInterface $Resolver)
+    {
+        $this->Resolver = $Resolver;
+    }
 
-   public function getName()
-   {
-      return 'Aurora';
-   }
+    public function getName()
+    {
+        return 'Aurora';
+    }
 
-   public function getGlobals()
-   {
-      return [
-         'HTML' => $this->Injector->make("Aurora\\Helper\\HTML"),
-         'String' => $this->Injector->make("Aurora\\Helper\\String"),
-         'Text' => $this->Injector->make("Aurora\\Helper\\Text"),
-         'Url' => $this->Injector->make("Aurora\\Helper\\Url"),
-         'Form' => $this->Injector->make("Aurora\\Helper\\Form"),
-      ];
-   }
+    public function getGlobals()
+    {
+        return [
+            'HTML' => $this->Resolver->make("Aurora\\Helper\\HTML"),
+            'String' => $this->Resolver->make("Aurora\\Helper\\String"),
+            'Text' => $this->Resolver->make("Aurora\\Helper\\Text"),
+            'Url' => $this->Resolver->make("Aurora\\Helper\\Url"),
+            'Form' => $this->Resolver->make("Aurora\\Helper\\Form"),
+        ];
+    }
 
-   public function getInjector()
-   {
-      return $this->Injector;
-   }
+    public function getResolver()
+    {
+        return $this->Resolver;
+    }
 }
